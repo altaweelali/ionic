@@ -1,0 +1,26 @@
+<ion-view title="Playlist">
+  <ion-content class="has-header" >
+  
+      UserName:
+      <input type="text" name="username" value="alia" id="user-name" />
+      Password:
+      <input type="text" name="Password" value="WorkPass__11" id="user-password" />
+      <br />
+      <input type="text" name="name" value="https://epma1.com" id="server-name" />
+      <br />
+      <select id="call-type">
+          <option value="basic">Basic</option>
+          <option value="ntlm">NTLM</option>
+          <option value="jsonp">JSONP</option>
+      </select>
+      <br />
+      <p class="event listening">Connecting to Device</p>
+      <p class="event received">Device is Ready</p>
+      <br />
+      <button onclick="callAjax()">Call Ajax</button>
+      <button onclick="clearScreen()">clear</button>
+      <p id="ajax-message"></p>
+
+     
+  </ion-content>
+</ion-view>
