@@ -59,7 +59,8 @@
                     case 200:
                         alert(200);
                         break;
-
+                    default:
+                        alert(status);
 
                 }
             }
