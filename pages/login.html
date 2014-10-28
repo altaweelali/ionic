@@ -1,0 +1,36 @@
+﻿<ion-view title="Login" hide-back-button="true" hide-nav-bar="true">
+   
+    <ion-content class="has-header">
+      
+            <p>message</p>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-earth"></i> &nbsp;&nbsp;
+                    <input type="text" placeholder="PWA URL" ng-model="loginInfo.url" ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-person"></i> &nbsp;&nbsp;
+                    
+                    <input type="text" placeholder="Username" ng-model="loginInfo.username" ng-required="true">
+                </label>
+                <label class="item item-input">
+                    <i class="icon ion-locked"></i> &nbsp;&nbsp;
+                    <input type="password" placeholder="Password" ng-model="loginInfo.password" ng-required="true">
+                </label>
+                <label class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="loginInfo.rememberMe">
+                    </label>
+                    Remember me
+                </label>
+
+
+                <button class="button button-block button-positive" ng-click="doLogin()">
+                    Login
+                </button>
+            </div>
+      
+           
+       
+    </ion-content>
+</ion-view>

@@ -1,0 +1,57 @@
+﻿<ion-side-menus>
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+            <ion-nav-back-button class="button-clear"><i class="icon ion-ios7-arrow-back"></i> Back</ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+    </ion-pane>
+    <ion-side-menu side="left"
+                   width="200"
+                   is-enabled="{{enableMenu}}">
+        >
+        <header class="bar bar-header bar-stable">
+            <h1 class="title">ICON</h1>
+        </header>
+        <ion-content class="has-header">
+
+            <ion-list>
+                <div class="item item-divider">
+                   Dashboards
+                </div>
+                <ion-item nav-clear menu-close href="#/app/summary">
+                    <i class="icon ion-clipboard"></i>
+                    &nbsp;Summary
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/work">
+                    <i class="icon ion-briefcase"></i>
+                    &nbsp;Work
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/cost">
+                    <i class="icon ion-cash"></i>
+                    &nbsp;Cost
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/team">
+                    <i class="icon ion-person-stalker"></i>
+                    &nbsp;Team
+                </ion-item>
+                <div class="item item-divider">
+                    Main
+                </div>
+                <ion-item nav-clear menu-close href="#/app/projects">
+                    <i class="icon ion-grid"></i>
+                    &nbsp;Project List
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/settings">
+                    <i class="icon ion-gear-a"></i>
+                    &nbsp;Settings
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/app/login">
+                    <i class="icon ion-power"></i>
+                    &nbsp;Logout
+                </ion-item>
+            </ion-list>
+
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
+
