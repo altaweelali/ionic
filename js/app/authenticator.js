@@ -24,8 +24,7 @@
                 var statusCode = xhr.status;
                 if (statusCode == 200) {
                     var response = xhr.responseText;
-                    //var res = JSON.parse(response);
-                    //alert('cooool')
+                
                 }
             };
             xhr.onerror = function (e) {
@@ -34,11 +33,21 @@
 
             xhr.addEventListener("loadend", loadEnd, false);
 
+   
+            function loadEnd(e) {
 
-            //xhr.onreadystatechange = function () {
-                
-            function loadEnd (e) {
                 var status = xhr.status
+                var response = xhr.responseText;
+
+                var result = jQuery.parseJSON(response);
+
+                debugger;
+                if (status == 200 || status == 0) {
+
+                    if (result.d.results[0].Name) {
+                        alert(result.d.results[0].Name)
+                    }
+                }
 
                 switch (status) {
                     case 404:
