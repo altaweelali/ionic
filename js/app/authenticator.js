@@ -14,9 +14,7 @@
            
             var endpoint = '/_api/ProjectServer/Projects'
 
-
             var xhr = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
-
 
 
             xhr.open("GET", url + endpoint, true, encodeURIComponent(username), encodeURIComponent(password));
@@ -31,7 +29,7 @@
                 }
             };
             xhr.onerror = function (e) {
-                //alert( 'bad')
+                alert(e.error);
             };
 
             xhr.addEventListener("loadend", loadEnd, false);
