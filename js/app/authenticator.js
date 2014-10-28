@@ -2,7 +2,7 @@
 
     var app = angular.module('app');
 
-    app.factory('auth', [function () {
+    app.factory('auth', ['$q', function ($q) {
 
         var _username;
         var _password;
@@ -11,6 +11,8 @@
 
 
         var login = function (username, password, url, rememberMe) {
+
+            var deferred = $q.defer();
            
              _username = username;
              _password = password;
@@ -24,6 +26,7 @@
 
             xhr.open("GET", url + endpoint, true, encodeURIComponent(username), encodeURIComponent(password));
             xhr.setRequestHeader("ACCEPT", "application/json;odata=verbose")
+            
             xhr.send();
             xhr.onload = function () {
                 var statusCode = xhr.status;
@@ -44,27 +47,33 @@
                 var status = xhr.status
                 var response = xhr.responseText;
 
-                var result = jQuery.parseJSON(response);
+               
 
-                debugger;
+            
                 if (status == 200 || status == 0) {
 
+                    var result = jQuery.parseJSON(response);
                     if (result.d.results[0].Name) {
                         alert(result.d.results[0].Name)
 
-                        storeCredentials();
+                        deferred.resolve(true)
+
+                       
+                            storeCredentials();
+                     
+                       
                         //TODO: Report sucess and store credentials 
 
 
                     } else {
 
                         // TODO: check if the user dosent have permisson to see the projects
-
+                       
                     }
                 } else {
 
                     //TODO: report error and tell the user to retry
-                    
+                    deferred.reject(false);
 
                 }
 
@@ -94,7 +103,7 @@
 
             //TODO: set timeout then resolve the promise to get the user to try agian 
 
-
+            return deferred.promise;
 
         }
 
@@ -111,23 +120,34 @@
 
             window.localStorage.removeItem("_userName");
             window.localStorage.removeItem("_password");
-            window.localStorage.removeItem("_url");
+            //window.localStorage.removeItem("_url");
 
         }
 
         var storeCredentials = function () {
 
-            window.localStorage.setItem("_userName", _username);
-            window.localStorage.setItem("_password", _password);
+            if (_rememberMe) {
+                window.localStorage.setItem("_userName", _username);
+                window.localStorage.setItem("_password", _password);
+            }
+            
             window.localStorage.setItem("_url", _url);
 
+        }
+
+        var getAppServiceUrl = function () {
+
+            var url = window.localStorage.getItem("_url");
+            return url  
         }
 
         return {
 
             login: login,
             getCredentials: getCredentials,
-            removeUser: removeUser
+            removeUser: removeUser,
+
+            getAppServiceUrl: getAppServiceUrl
         }
     }]
     )

@@ -1,7 +1,7 @@
 ﻿var app = angular.module('app')
-app.controller('loginCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state) {
+app.controller('loginCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext) {
 
-   var storedCredentials =  auth.getCredentials()
+    var storedCredentials = auth.getCredentials();
 
     $scope.loginInfo = {};
     $scope.loginInfo.url = storedCredentials.url;
@@ -13,7 +13,24 @@ app.controller('loginCtrl', function ($scope, $ionicModal, $timeout, $http, auth
         
         //TODO: Add Form Validation before sending the vars to the login provider
 
-        auth.login($scope.loginInfo.username, $scope.loginInfo.password, $scope.loginInfo.url, $scope.loginInfo.rememberMe)
+        var promise = auth.login($scope.loginInfo.username, $scope.loginInfo.password, $scope.loginInfo.url, $scope.loginInfo.rememberMe);
+
+        promise.then(success, failure);
+
+        function success(response) {
+
+
+            //$state.go('app.projects')
+
+            datacontext.getCustomFields().done(function (data) {
+                alert(data[0].Name)
+            })
+        }
+
+        function failure(respose) {
+            alert('try again')
+        }
+
     }
   
 })
