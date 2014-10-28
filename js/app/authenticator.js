@@ -4,15 +4,20 @@
 
     app.factory('auth', [function () {
 
-        var username;
-        var password;
-        var url;
-        var rememberMe;
+        var _username;
+        var _password;
+        var _url;
+        var _rememberMe;
 
 
         var login = function (username, password, url, rememberMe) {
            
-            var endpoint = '/_api/ProjectServer/Projects'
+             _username = username;
+             _password = password;
+             _url = url;
+             _rememberMe = rememberMe;
+
+            var endpoint = '/_api/ProjectServer/Projects?$select=Name, Id'
 
             var xhr = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest();
 
@@ -46,7 +51,21 @@
 
                     if (result.d.results[0].Name) {
                         alert(result.d.results[0].Name)
+
+                        storeCredentials();
+                        //TODO: Report sucess and store credentials 
+
+
+                    } else {
+
+                        // TODO: check if the user dosent have permisson to see the projects
+
                     }
+                } else {
+
+                    //TODO: report error and tell the user to retry
+                    
+
                 }
 
                 switch (status) {
@@ -73,7 +92,7 @@
             }
 
 
-
+            //TODO: set timeout then resolve the promise to get the user to try agian 
 
 
 
@@ -81,13 +100,26 @@
 
         var getCredentials = function () {
 
+            var userName = window.localStorage.getItem("_userName");
+            var password = window.localStorage.getItem("_password");
+            var url = window.localStorage.getItem("_url");
+
+            return {username: userName, password: password, url: url}
         }
 
         var removeUser = function () {
 
+            window.localStorage.removeItem("_userName");
+            window.localStorage.removeItem("_password");
+            window.localStorage.removeItem("_url");
+
         }
 
         var storeCredentials = function () {
+
+            window.localStorage.setItem("_userName", _username);
+            window.localStorage.setItem("_password", _password);
+            window.localStorage.setItem("_url", _url);
 
         }
 
