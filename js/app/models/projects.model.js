@@ -25,6 +25,7 @@ $projects.prototype.getProjectList = function () {
 
         return {
             Name: o.ProjectName,
+            ID: o.ProjectId,
             Initial: initial,
             Start: startDate,
             Finish: finishDate,
