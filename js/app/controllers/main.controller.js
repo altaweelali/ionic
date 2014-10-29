@@ -1,11 +1,11 @@
 ﻿var app = angular.module('app')
-app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state) {
+app.controller('AppCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, $rootScope, $stateParams) {
 
-    $scope.test = 'test var';
+    $scope.ProjectUID = $stateParams.ProjectUID;
     $scope.onSwipeRight = function () {
         alert('swiped right')
     }
-    $scope.enableMenu = true;
+    $rootScope.menuStatus = true;
 
 
    

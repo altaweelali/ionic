@@ -7,7 +7,7 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
 
     $scope.query;
 
-
+   
     $scope.projectListArr = [];
     var projectUids = $rootScope.projects.getAuhorizedProjectList();
 

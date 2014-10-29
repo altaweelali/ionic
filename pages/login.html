@@ -1,36 +1,42 @@
-﻿<ion-view title="Login" hide-back-button="true" hide-nav-bar="true">
-   
+﻿<ion-view title="Login" hide-back-button="true" hide-nav-bar="true" class="c-login-view">
+
     <ion-content class="has-header">
-      
-            <p>message</p>
-            <div class="list list-inset">
-                <label class="item item-input">
-                    <i class="icon ion-earth"></i> &nbsp;&nbsp;
-                    <input type="text" placeholder="PWA URL" ng-model="loginInfo.url" ng-required="true">
+        <div class="c-logo">
+            <img src="/img/ionic.png" alt="" />
+            <span>App Title</span>
+        </div>
+
+        <div class="c-error-message " >
+            <span ng-show="error">{{errorMessage}}</span>
+        </div>
+        <div class="list list-inset c-login-list">
+            <label class="item item-input">
+                <i class="icon ion-earth"></i> &nbsp;&nbsp;
+                <input type="text" placeholder="PWA URL" ng-model="loginInfo.url" ng-required="true">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-person"></i> &nbsp;&nbsp;
+
+                <input type="text" placeholder="Username" ng-model="loginInfo.username" ng-required="true">
+            </label>
+            <label class="item item-input">
+                <i class="icon ion-locked"></i> &nbsp;&nbsp;
+                <input type="password" placeholder="Password" ng-model="loginInfo.password" ng-required="true">
+            </label>
+            <label class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" ng-model="loginInfo.rememberMe">
                 </label>
-                <label class="item item-input">
-                    <i class="icon ion-person"></i> &nbsp;&nbsp;
-                    
-                    <input type="text" placeholder="Username" ng-model="loginInfo.username" ng-required="true">
-                </label>
-                <label class="item item-input">
-                    <i class="icon ion-locked"></i> &nbsp;&nbsp;
-                    <input type="password" placeholder="Password" ng-model="loginInfo.password" ng-required="true">
-                </label>
-                <label class="item item-checkbox">
-                    <label class="checkbox">
-                        <input type="checkbox" ng-model="loginInfo.rememberMe">
-                    </label>
-                    Remember me
-                </label>
+                Remember me
+            </label>
 
 
-                <button class="button button-block button-positive" ng-click="doLogin()">
-                    Login
-                </button>
-            </div>
-      
-           
-       
+            <button class="button button-block button-custom" ng-click="doLogin()">
+                Login
+            </button>
+        </div>
+
+
+
     </ion-content>
 </ion-view>

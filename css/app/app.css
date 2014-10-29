@@ -1,0 +1,101 @@
+﻿/*Log in Page - start*/
+
+.c-login-view {
+    background-color: #e5e5e5
+}
+
+.c-login-list {
+width: 85%;
+margin: 0 auto;
+background-color: #e5e5e5
+}
+
+
+.c-login-list .item {
+margin-top: 3px;
+border-radius: 4px !important;
+  border-color: #e5e5e5;
+
+}
+
+.c-login-list .item-checkbox {
+
+      background-color: #e5e5e5;
+      border-color: #e5e5e5;
+      font-size: 14px;
+}
+
+    .c-login-list .item-checkbox .checkbox {
+    
+    
+    }
+
+ .c-login-list .c-button {
+
+border-color: #e5e5e5;
+background-color: #2b6b90;
+color: #fff;
+border-radius: 4px !important;
+}
+
+.button.button-custom {
+    border-color: #e5e5e5;
+    background-color: #2b6b90;
+    color: #fff; }
+    .button.button-custom:hover {
+      color: #fff;
+      text-decoration: none; }
+    .button.button-custom.active, .button.button-custom.activated {
+      border-color: #e5e5e5;
+      background-color: #22526d;
+      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
+    .button.button-custom.button-clear {
+      border-color: transparent;
+      background: none;
+      box-shadow: none;
+      color: #2b6b90; }
+    .button.button-custom.button-icon {
+      border-color: transparent;
+      background: none; }
+    .button.button-custom.button-outline {
+      border-color: #e5e5e5;
+      background: transparent;
+      color: #2b6b90; }
+      .button.button-custom.button-outline.active, .button.button-custom.button-outline.activated {
+        background-color: #2b6b90;
+        box-shadow: none;
+        color: #fff; }
+
+
+.c-login-view .c-error-message {
+
+    margin: 0 auto;
+    text-align: center;
+    color: #e04646;
+    height: 20px;
+
+}
+
+.c-login-view .c-logo {
+
+    text-align: center;
+    margin-bottom: 3%;
+
+}
+.c-login-view .c-logo img {
+
+    width:100px;
+    height: 100px;
+
+}
+.c-login-view .c-logo span {
+
+    display: block;
+
+}
+/*Log in Page - End*/
+
+/*NG Animation for project list */
+
+    
+/*NG Animation for project list */

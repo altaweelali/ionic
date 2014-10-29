@@ -7,7 +7,7 @@
     </ion-pane>
     <ion-side-menu side="left"
                    width="200"
-                   is-enabled="{{enableMenu}}">
+                   is-enabled="true">
         >
         <header class="bar bar-header bar-stable">
             <h1 class="title">ICON</h1>
@@ -16,9 +16,9 @@
 
             <ion-list>
                 <div class="item item-divider">
-                   Dashboards
+                    Dashboards
                 </div>
-                <ion-item nav-clear menu-close href="#/app/summary">
+                <ion-item nav-clear menu-close href="#/app/summary/{{ProjectUID}}">
                     <i class="icon ion-clipboard"></i>
                     &nbsp;Summary
                 </ion-item>

@@ -58,7 +58,7 @@ angular.module('app', ['ionic', 'breeze.angular'])
             }
         })
       .state('app.summary', {
-          url: "/summary",
+          url: "/summary/:ProjectUID",
           views: {
               'menuContent': {
                   templateUrl: "pages/summary.html",
