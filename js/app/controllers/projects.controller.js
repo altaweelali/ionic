@@ -13,18 +13,27 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
     ProjectOwnerName,\
     ProjectPercentCompleted";
 
+    $scope.getProjects = function () {
+        angular.forEach(projectUids, function (uid) {
 
-    angular.forEach(projectUids, function (uid) {
 
+            var query = new breeze.EntityQuery()
+            .from('Projects')
+            .where('ProjectId', '==', uid)
+            .select(select);
 
-        var query = new breeze.EntityQuery()
-        .from('Projects')
-        .where('ProjectId', '==', uid)
-        .select(select);
+            datacontext.get('Projects', query).done(ready).fail(fail)
+        });
 
-        datacontext.get('Projects', query).done(ready).fail(fail)
-    });
+    }
 
+    $scope.getProjects();
+
+    $scope.onRefresh = function () {
+        $scope.projectListArr = [];
+        $scope.getProjects()
+        
+    }
     var index = 0;
     var callLength = projectUids.length;
     function ready(data) {
@@ -34,6 +43,7 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
         if (index > callLength -1) {
 
             $rootScope.projects.projectList = $scope.projectListArr;
+            $scope.$broadcast('scroll.refreshComplete');
         }
 
     }
