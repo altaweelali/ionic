@@ -2,6 +2,12 @@
 var app = angular.module('app')
 app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope) {
 
+
+    // globa variables
+
+    $scope.query;
+
+
     $scope.projectListArr = [];
     var projectUids = $rootScope.projects.getAuhorizedProjectList();
 

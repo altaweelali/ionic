@@ -10,8 +10,12 @@
                        on-refresh="onRefresh()">
         </ion-refresher>
         <ion-list >
-            <ion-item ng-repeat="project in projectListArr">
-                {{project.ProjectName}}!
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="query">
+            </label>
+            <ion-item ng-repeat="project in projectListArr | filter:query | orderBy: 'ProjectName'">
+                {{project.ProjectName}}
             </ion-item>
         </ion-list>
 
