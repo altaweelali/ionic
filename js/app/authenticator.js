@@ -2,7 +2,7 @@
 
     var app = angular.module('app');
 
-    app.factory('auth', ['$q', function ($q) {
+    app.factory('auth', ['$q', '$rootScope', function ($q, $rootScope) {
 
         var _username;
         var _password;
@@ -36,7 +36,7 @@
                 }
             };
             xhr.onerror = function (e) {
-                alert(e.error);
+               
             };
 
             xhr.addEventListener("loadend", loadEnd, false);
@@ -54,8 +54,9 @@
 
                     var result = jQuery.parseJSON(response);
                     if (result.d.results[0].Name) {
-                        alert(result.d.results[0].Name)
-
+                       
+                        $rootScope.projects = new $projects;
+                        $rootScope.projects.authorizedProjects = result.d.results;
                         deferred.resolve(true)
 
                        
@@ -77,27 +78,27 @@
 
                 }
 
-                switch (status) {
-                    case 404:
-                        alert(404);
-                        break;
-                    case 401:
-                        alert(401);
-                        break;
-                    case 500:
-                        alert(500);
-                        break;
-                    case 0:
-                        alert(0);
-                        break;
+                //switch (status) {
+                //    case 404:
+                //        alert(404);
+                //        break;
+                //    case 401:
+                //        alert(401);
+                //        break;
+                //    case 500:
+                //        alert(500);
+                //        break;
+                //    case 0:
+                //        alert(0);
+                //        break;
 
-                    case 200:
-                        alert(200);
-                        break;
-                    default:
-                        alert(status);
+                //    case 200:
+                //        alert(200);
+                //        break;
+                //    default:
+                //        alert(status);
 
-                }
+                //}
             }
 
 

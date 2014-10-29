@@ -53,7 +53,7 @@ angular.module('app', ['ionic', 'breeze.angular'])
             views: {
                 'menuContent': {
                     templateUrl: "pages/projects.html",
-                    controller: 'AppCtrl'
+                    controller: 'projectsCtrl'
                 }
             }
         })

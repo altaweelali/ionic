@@ -6,7 +6,11 @@
         <button class="button button-icon icon ion-ios7-gear-outline"></button>
     </ion-nav-buttons>
     <ion-content class="has-header">
-        <h1>Projects</h1>
+        <ion-list>
+            <ion-item ng-repeat="project in projectListArr">
+                {{project.ProjectName}}!
+            </ion-item>
+        </ion-list>
 
     </ion-content>
 </ion-view>
