@@ -7,13 +7,45 @@
         <ion-refresher pulling-text="Pull to refresh..."
                        on-refresh="onRefresh()">
         </ion-refresher>
+
+
         <ion-list>
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="text" placeholder="Search" ng-model="query">
             </label>
-            <ion-item  ng-repeat="project in projectListArr | filter:query | orderBy: 'ProjectName'" href="#/app/summary/{{project.ProjectId}}">
-                {{project.ProjectName}}
+            <div class="host" ng-show="loading">
+                <div class="loading loading-0"></div>
+                <div class="loading loading-1"></div>
+                <div class="loading loading-2"></div>
+            </div>
+            <ion-item ng-repeat="project in projectList | filter:query | orderBy: 'ProjectStartDate' : true" href="#/app/summary/{{project.ProjectId}}" class="c-ion-item">
+
+             
+               
+                <div class="row c-project-item-conttainer">
+                    <div class="col col-20 c-initial-col">
+                        <span class="c-initail-circle" ng-style="project.Color">{{project.Initial}}</span>
+                    </div>
+                    <div class="col col-80 c-info-col">
+                        <div class="c-project-name">{{project.Name}}</div><i class="ion-chevron-right"></i>
+                        <div class="row c-info-row">
+                            <div class="col c-col-1">
+                                <div class="c-info-title">Owner: <span class="c-info-val">{{project.Owner}}</span></div>
+                                <div class="c-info-title">Start:<span class="c-info-val">{{project.Start}}</span></div>
+
+                            </div>
+                            <div class="col c-col-2">
+                                <div class="c-info-title">Finish: <span class="c-info-val">{{project.Finish}}</span></div>
+                                <div class="c-info-title">Cost: <span class="c-info-val">{{project.Cost}}</span></div>
+
+                            </div>
+                            <div class="c-percent-comp">{{project.PercentComplete}}%</div>
+                        </div>
+                    </div>
+                </div>
+
+               
             </ion-item>
         </ion-list>
 

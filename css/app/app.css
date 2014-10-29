@@ -1,101 +1,219 @@
 ﻿/*Log in Page - start*/
 
 .c-login-view {
-    background-color: #e5e5e5
+    background-color: #e5e5e5;
 }
 
 .c-login-list {
-width: 85%;
-margin: 0 auto;
-background-color: #e5e5e5
+    width: 85%;
+    margin: 0 auto;
+    background-color: #e5e5e5;
 }
 
-
-.c-login-list .item {
-margin-top: 3px;
-border-radius: 4px !important;
-  border-color: #e5e5e5;
-
-}
-
-.c-login-list .item-checkbox {
-
-      background-color: #e5e5e5;
-      border-color: #e5e5e5;
-      font-size: 14px;
-}
-
-    .c-login-list .item-checkbox .checkbox {
-    
-    
+    .c-login-list .item {
+        margin-top: 3px;
+        border-radius: 4px !important;
+        border-color: #e5e5e5;
     }
 
- .c-login-list .c-button {
+        .c-login-list .item i {
+            color: #2b6b90;
+        }
 
-border-color: #e5e5e5;
-background-color: #2b6b90;
-color: #fff;
-border-radius: 4px !important;
-}
+    .c-login-list .item-checkbox {
+        background-color: #e5e5e5;
+        border-color: #e5e5e5;
+        font-size: 14px;
+    }
+
+    .c-login-list .checkbox input:before, .checkbox .checkbox-icon:before {
+        border-color: #2b6b90;
+    }
+
+    .c-login-list .checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+        background: #2b6b90;
+    }
+
+    .c-login-list .c-button {
+        border-color: #e5e5e5;
+        background-color: #2b6b90;
+        color: #fff;
+        border-radius: 4px !important;
+    }
 
 .button.button-custom {
     border-color: #e5e5e5;
     background-color: #2b6b90;
-    color: #fff; }
-    .button.button-custom:hover {
-      color: #fff;
-      text-decoration: none; }
-    .button.button-custom.active, .button.button-custom.activated {
-      border-color: #e5e5e5;
-      background-color: #22526d;
-      box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15); }
-    .button.button-custom.button-clear {
-      border-color: transparent;
-      background: none;
-      box-shadow: none;
-      color: #2b6b90; }
-    .button.button-custom.button-icon {
-      border-color: transparent;
-      background: none; }
-    .button.button-custom.button-outline {
-      border-color: #e5e5e5;
-      background: transparent;
-      color: #2b6b90; }
-      .button.button-custom.button-outline.active, .button.button-custom.button-outline.activated {
-        background-color: #2b6b90;
-        box-shadow: none;
-        color: #fff; }
+    color: #fff;
+}
 
+    .button.button-custom:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .button.button-custom.active, .button.button-custom.activated {
+        border-color: #e5e5e5;
+        background-color: #22526d;
+        box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);
+    }
+
+    .button.button-custom.button-clear {
+        border-color: transparent;
+        background: none;
+        box-shadow: none;
+        color: #2b6b90;
+    }
+
+    .button.button-custom.button-icon {
+        border-color: transparent;
+        background: none;
+    }
+
+    .button.button-custom.button-outline {
+        border-color: #e5e5e5;
+        background: transparent;
+        color: #2b6b90;
+    }
+
+        .button.button-custom.button-outline.active, .button.button-custom.button-outline.activated {
+            background-color: #2b6b90;
+            box-shadow: none;
+            color: #fff;
+        }
 
 .c-login-view .c-error-message {
-
     margin: 0 auto;
     text-align: center;
     color: #e04646;
     height: 20px;
-
 }
 
 .c-login-view .c-logo {
-
     text-align: center;
     margin-bottom: 3%;
-
 }
-.c-login-view .c-logo img {
 
-    width:100px;
-    height: 100px;
+    .c-login-view .c-logo img {
+        width: 100px;
+        height: 100px;
+    }
 
-}
-.c-login-view .c-logo span {
-
-    display: block;
-
-}
+    .c-login-view .c-logo span {
+        display: block;
+    }
 /*Log in Page - End*/
 
-/*NG Animation for project list */
+/*Loader */
 
-    
-/*NG Animation for project list */
+.host{
+  background:#FFF;
+  width:50px;
+  height:20px;
+  margin: auto;
+  padding-top:40px;
+
+}
+.loading{
+  width:10px;
+  height:10px;
+  background:#FFF;
+  border-radius:100%;
+  float:left;
+  margin-right:5px;
+}
+.loading-0{
+    -webkit-animation:bounce 1s infinite;
+    -webkit-animation-delay:.1s;
+    background:#009DC6
+  
+}
+.loading-1{
+    -webkit-animation:bounce 1s infinite;
+    -webkit-animation-delay:.3s;
+    background:#e8b440;
+}
+.loading-2{
+    -webkit-animation:bounce 1s infinite ease;
+    -webkit-animation-delay:.5s;
+    background:#b62327;
+}
+@-webkit-keyframes bounce {
+  0%, 100% {
+
+    opacity:1;
+  }
+  60% {
+    opacity:.0;
+  }
+}
+
+/*Loader */
+
+
+/*Project List page*/
+.c-ion-item .item-content {
+    padding: 10px 10px 10px 10px !important;
+}
+.c-project-item-conttainer {
+}
+
+.c-initial-col {
+margin-top: 30px;
+padding: 0;
+}
+
+.c-initail-circle {
+    height: 50px;
+width: 50px;
+display: block;
+border-radius: 50px;
+text-align: center;
+line-height: 50px;
+color: white;
+}
+.c-info-row {
+padding: 0;
+}
+.c-info-row .col-1{
+    margin-right: 5px;
+}
+.c-info-row .col-2{
+
+}
+.c-info-col {
+    padding: 0;
+}
+
+.c-project-name {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    font-size: 16px;
+    display: inline-block;
+}
+.c-info-col i{
+   float: right;
+    color:  rgb(155, 154, 154);
+}
+.c-info-title {
+    text-transform: uppercase;
+font-size: 11px;
+color: rgb(155, 154, 154);
+font-weight: 600;
+}
+
+.c-info-val {
+    font-weight: 100;
+margin-left: 5px;
+text-transform: capitalize;
+}
+
+.c-percent-comp {
+color: rgb(150, 149, 149);
+padding-top: 18px;
+}
