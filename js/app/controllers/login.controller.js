@@ -2,7 +2,7 @@
 app.controller('loginCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope) {
 
 
-    $rootScope.menuStatus = false;
+    $rootScope.isLoggedIn = false;
     $scope.error = false;
     $scope.errorMessage = '';
 
@@ -26,8 +26,9 @@ app.controller('loginCtrl', function ($scope, $ionicModal, $timeout, $http, auth
         function success(response) {
 
 
-            $state.go('app.projects')
-            $rootScope.menuStatus = true;
+            $state.go('home.projects')
+            $rootScope.isLoggedIn = true;
+         
 
             //datacontext.getCustomFields().done(function (data) {
             //    alert(data[0].Name)

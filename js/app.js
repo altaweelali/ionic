@@ -29,16 +29,30 @@ angular.module('app', ['ionic', 'breeze.angular'])
           controller: 'AppCtrl'
       })
 
-      .state('app.login', {
-          url: "/login",
-          views: {
-              'menuContent': {
-                  templateUrl: "pages/login.html",
-                  controller: 'loginCtrl'
-              }
-          }
-      })
+      .state('home', {
+          url: "/home",
+          abstract: true,
+         templateUrl: "pages/layouts/home-layout.html",
 
+      })
+         .state('home.login', {
+             url: "/login",
+             views: {
+                 'home': {
+                     templateUrl: "pages/login.html",
+                     controller: 'loginCtrl'
+                 }
+             }
+         })
+         .state('home.projects', {
+             url: "/projects",
+             views: {
+                 'home': {
+                     templateUrl: "pages/projects.html",
+                     controller: 'projectsCtrl'
+                 }
+             }
+         })
       .state('app.settings', {
           url: "/settings",
           views: {
@@ -48,17 +62,17 @@ angular.module('app', ['ionic', 'breeze.angular'])
               }
           }
       })
-        .state('app.projects', {
-            url: "/projects",
-            views: {
-                'menuContent': {
-                    templateUrl: "pages/projects.html",
-                    controller: 'projectsCtrl'
-                }
-            }
-        })
+        //.state('app.projects', {
+        //    url: "/projects",
+        //    views: {
+        //        'menuContent': {
+        //            templateUrl: "pages/projects.html",
+        //            controller: 'projectsCtrl'
+        //        }
+        //    }
+        //})
       .state('app.summary', {
-          url: "/summary/:ProjectUID",
+          url: "/summary",
           views: {
               'menuContent': {
                   templateUrl: "pages/summary.html",
@@ -99,5 +113,5 @@ angular.module('app', ['ionic', 'breeze.angular'])
         }
     });
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/home/login');
 });

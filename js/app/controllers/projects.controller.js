@@ -2,6 +2,9 @@
 var app = angular.module('app')
 app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope) {
 
+    if (!$rootScope.isLoggedIn) {
+        $state.go('home.login')
+    }
 
     // globa variables
 
@@ -9,9 +12,15 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
 
     $scope.loading = true;
 
-    $scope.projectList;
+
     var projectListArr = [];
-    var projectUids = $rootScope.projects.getAuhorizedProjectList();
+
+    try {
+        var projectUids = $rootScope.projects.getAuhorizedProjectList();
+    } catch (e) {
+        $state.go('home.login')
+    }
+    
 
     
     var select = "ProjectId,\
@@ -38,7 +47,7 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
 
     if ($rootScope.projectsLoaded) {
         $scope.projectList = $rootScope.projects.getProjectList();
-        $scope.$broadcast('scroll.refreshComplete');
+        //$scope.$broadcast('scroll.refreshComplete');
         $scope.loading = false;
     } else {
         $scope.getProjects();
@@ -76,6 +85,13 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
         $scope.projectList = [];
         projectListArr = [];
         $scope.getProjects()
+
+    }
+
+    $scope.goToSummary = function (ID) {
+
+        $rootScope.currentProjectID = ID;
+        $state.go('app.summary')
 
     }
 

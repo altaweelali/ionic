@@ -7,7 +7,7 @@
     </ion-pane>
     <ion-side-menu side="left"
                    width="200"
-                   is-enabled="true">
+                   is-enabled="menuStatus">
         >
         <header class="bar bar-header bar-stable">
             <h1 class="title">ICON</h1>
@@ -18,7 +18,7 @@
                 <div class="item item-divider">
                     Dashboards
                 </div>
-                <ion-item nav-clear menu-close href="#/app/summary/{{ProjectUID}}">
+                <ion-item nav-clear menu-close href="#/app/summary">
                     <i class="icon ion-clipboard"></i>
                     &nbsp;Summary
                 </ion-item>
@@ -37,7 +37,7 @@
                 <div class="item item-divider">
                     Main
                 </div>
-                <ion-item nav-clear menu-close href="#/app/projects">
+                <ion-item nav-clear menu-close href="#/home/projects">
                     <i class="icon ion-grid"></i>
                     &nbsp;Project List
                 </ion-item>
@@ -45,7 +45,7 @@
                     <i class="icon ion-gear-a"></i>
                     &nbsp;Settings
                 </ion-item>
-                <ion-item nav-clear menu-close href="#/app/login">
+                <ion-item nav-clear menu-close href="#/home/login">
                     <i class="icon ion-power"></i>
                     &nbsp;Logout
                 </ion-item>
