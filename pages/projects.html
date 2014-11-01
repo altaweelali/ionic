@@ -19,7 +19,7 @@
                 <div class="loading loading-1"></div>
                 <div class="loading loading-2"></div>
             </div>
-            <ion-item ng-repeat="project in projectList | filter:query | orderBy: 'ProjectStartDate' : true" href="#/app/summary/{{project.ID}}" class="c-ion-item">
+            <ion-item ng-repeat="project in projectList | filter:query | orderBy: 'Start' : true" href="#/app/summary/{{project.ID}}" class="c-ion-item">
 
              
                
@@ -36,8 +36,8 @@
 
                             </div>
                             <div class="col c-col-2">
+                                <br />
                                 <div class="c-info-title">Finish: <span class="c-info-val">{{project.Finish}}</span></div>
-                                <div class="c-info-title">Cost: <span class="c-info-val">{{project.Cost}}</span></div>
 
                             </div>
                             <div class="c-percent-comp">{{project.PercentComplete}}%</div>

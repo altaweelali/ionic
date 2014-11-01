@@ -8,7 +8,8 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
     $scope.query;
 
     $scope.loading = true;
-    $scope.projectList = [];
+
+    $scope.projectList;
     var projectListArr = [];
     var projectUids = $rootScope.projects.getAuhorizedProjectList();
 
@@ -18,7 +19,7 @@ app.controller('projectsCtrl', function ($scope, $ionicModal, $timeout, $http, a
     ProjectFinishDate,\
     ProjectStartDate,\
     ProjectOwnerName,\
-ProjectCost,\
+    ProjectCost,\
     ProjectPercentCompleted";
 
     $scope.getProjects = function () {
@@ -35,17 +36,21 @@ ProjectCost,\
 
     }
 
-    $scope.getProjects();
-
-    $scope.onRefresh = function () {
-        $scope.loading = true;
-        $scope.projectList = [];
-        projectListArr = [];
-        $scope.getProjects()
-        
+    if ($rootScope.projectsLoaded) {
+        $scope.projectList = $rootScope.projects.getProjectList();
+        $scope.$broadcast('scroll.refreshComplete');
+        $scope.loading = false;
+    } else {
+        $scope.getProjects();
     }
+   
+
+
+
+
     var index = 0;
     var callLength = projectUids.length;
+
     function ready(data) {
         index = index + 1;
         projectListArr.push.apply(projectListArr, data)
@@ -56,12 +61,22 @@ ProjectCost,\
             $scope.projectList = $rootScope.projects.getProjectList();
             $scope.$broadcast('scroll.refreshComplete');
             $scope.loading = false;
+            $rootScope.projectsLoaded = true;
         }
 
     }
 
    
     function fail(error) {
+    }
+
+
+    $scope.onRefresh = function () {
+        $scope.loading = true;
+        $scope.projectList = [];
+        projectListArr = [];
+        $scope.getProjects()
+
     }
 
 })

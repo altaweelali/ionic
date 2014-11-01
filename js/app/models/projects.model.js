@@ -10,17 +10,17 @@ $projects.prototype.getProjectList = function () {
     var that = this;
     var colors = [
 
-        '#85D6FF', '#9999FF', '#C285FF', '#80E680', '#FFB84D', '#FF70B8', '#6685E0', '#4DB8B8', '#E06666'
+        '#85D6FF', '#9999FF', '#C285FF', '#80E680', '#FFB84D', '#FF70B8', '#6685E0', '#4DB8B8', '#E06666', '#A3C266', '#DF7E5F', '#A3CC52', '#4D94B8', '#FF6666'
     ];
 
     var projects = _.map(this.projectList, function (o) {
 
         var startDate = that.formatDate(o.ProjectStartDate);
-        var finishDate = that.formatDate(o.ProjectFinishDate); 
-        var color = { 'background-color': colors[_.random(0,colors.length -1)] }
+        var finishDate = that.formatDate(o.ProjectFinishDate);
+        var color = { 'background-color': colors[_.random(0, colors.length - 1)] }
         var initial = o.ProjectName;
 
-        initial = initial.substring(0,1)
+        initial = initial.substring(0, 1)
         var cost = numeral(parseFloat(o.ProjectCost)).format('($0.00 a)');
 
         return {
@@ -34,7 +34,8 @@ $projects.prototype.getProjectList = function () {
             Owner: o.ProjectOwnerName,
             Cost: cost
         }
-    })
+    });
+
     return projects;
 
 }
