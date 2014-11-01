@@ -224,3 +224,38 @@
     color: rgb(150, 149, 149);
     padding-top: 18px;
 }
+
+/*Project Information*/
+
+.c-dash-container {
+    
+}
+
+
+.c-row {
+    padding: 0;
+    border-bottom:1px solid #edecec
+}
+
+.c-title-1 {
+    text-transform: uppercase;
+    font-size: 10px;
+    color:rgb(155, 154, 154);
+
+}
+.c-title-2 {
+}
+.c-title-3 {
+}
+.c-title-4 {
+}
+.c-title-5 {
+}
+
+.c-info-list {
+}
+
+.c-info-item {
+}
+
+/*Project Information end*/

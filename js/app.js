@@ -44,15 +44,15 @@ angular.module('app', ['ionic', 'breeze.angular'])
                  }
              }
          })
-         .state('home.projects', {
-             url: "/projects",
-             views: {
-                 'home': {
-                     templateUrl: "pages/projects.html",
-                     controller: 'projectsCtrl'
-                 }
-             }
-         })
+         //.state('home.projects', {
+         //    url: "/projects",
+         //    views: {
+         //        'home': {
+         //            templateUrl: "pages/projects.html",
+         //            controller: 'projectsCtrl'
+         //        }
+         //    }
+         //})
       .state('app.settings', {
           url: "/settings",
           views: {
@@ -62,21 +62,21 @@ angular.module('app', ['ionic', 'breeze.angular'])
               }
           }
       })
-        //.state('app.projects', {
-        //    url: "/projects",
-        //    views: {
-        //        'menuContent': {
-        //            templateUrl: "pages/projects.html",
-        //            controller: 'projectsCtrl'
-        //        }
-        //    }
-        //})
+        .state('app.projects', {
+            url: "/projects",
+            views: {
+                'menuContent': {
+                    templateUrl: "pages/projects.html",
+                    controller: 'projectsCtrl'
+                }
+            }
+        })
       .state('app.summary', {
           url: "/summary",
           views: {
               'menuContent': {
                   templateUrl: "pages/summary.html",
-                  controller: 'AppCtrl'
+                  controller: 'summaryCtrl'
                   
               }
           }

@@ -26,7 +26,7 @@ app.controller('loginCtrl', function ($scope, $ionicModal, $timeout, $http, auth
         function success(response) {
 
 
-            $state.go('home.projects')
+            $state.go('app.projects')
             $rootScope.isLoggedIn = true;
          
 
