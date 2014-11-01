@@ -282,6 +282,9 @@
     line-height: 100%;
 }
 
+.c-no-borders li{
+border:none !important;
+}
 .c-info-list {
     text-align: center;
     margin: 0 auto;
@@ -304,6 +307,45 @@
   padding: 5px;
 
     width:22%;
+
+}
+
+.c-kpi {
+   height: 40px;
+    width: 40px;
+    display: inline-block;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+  font-size:18px;
+    margin-top: 5px;
+
+}
+
+.c-kpi-red {
+    background-color:#de6464;
+}
+.c-kpi-green {
+    background-color:mediumaquamarine;
+}
+.c-kpi-yellow {
+    background-color:#f4c460;
+}
+.c-kpi-unknown {
+     background-color:rgba(0, 0, 0, 0.15);
+}
+
+
+.c-kpi-list {
+
+   margin: 0;
+   width: 100%
+
+}
+.c-kpi-list li{
+
+  text-align: center;
 
 }
 
