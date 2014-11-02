@@ -228,51 +228,57 @@
 /*Project Information*/
 
 .c-dash-container {
-    
 }
-
 
 .c-row {
     padding-left: 2px;
-      padding-right: 2px;
-    border-bottom:1px solid #edecec;
+    padding-right: 2px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
-.c-row .col{
- padding:0;
 
+    .c-row .col {
+        padding: 0;
+    }
+
+.c-devider {
+    border-bottom: 1px solid #edecec;
+    width: 90%;
+    margin: 0 auto;
+    height: 1px;
 }
 
 .c-title-1 {
     text-transform: uppercase;
     font-size: 9px;
-    color:rgb(155, 154, 154);
-   
-
+    color: rgb(155, 154, 154);
 }
+
 .c-title-2 {
     text-transform: uppercase;
     font-size: 10px;
-    color:rgb(0, 0, 0);
-    
+    color: rgb(0, 0, 0);
 }
-.c-title-3 {
 
+.c-title-3 {
     font-size: 12px;
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 }
+
 .c-title-4 {
-      text-transform: uppercase;
+    text-transform: uppercase;
     font-size: 12px;
-    color:rgb(0, 0, 0);
-    font-weight:500;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
 }
+
 .c-title-5 {
 }
+
 .c-title-center {
-     text-align:center;
+    text-align: center;
 }
+
 .c-text-nowrap {
     white-space: nowrap;
     overflow: hidden;
@@ -282,71 +288,149 @@
     line-height: 100%;
 }
 
-.c-no-borders li{
-border:none !important;
+.c-no-borders li {
+    border: none !important;
 }
+
 .c-info-list {
     text-align: center;
     margin: 0 auto;
-    padding:0;
+    padding: 0;
 }
 
 .c-info-item:nth-child(2) {
-     
-      border-left:1px solid #edecec;
-       
+    border-left: 1px solid #edecec;
 }
+
 .c-info-item:nth-child(3) {
-     border-right:1px solid #edecec;
-      border-left:1px solid #edecec;
-      
+    border-right: 1px solid #edecec;
+    border-left: 1px solid #edecec;
 }
+
 .c-info-item {
     margin-top: 5px;
-    display:inline-block;
-  padding: 5px;
-
-    width:22%;
-
+    display: inline-block;
+    padding: 5px;
+    width: 22%;
 }
 
 .c-kpi {
-   height: 40px;
+    height: 40px;
     width: 40px;
     display: inline-block;
     border-radius: 50px;
     text-align: center;
     line-height: 40px;
     color: white;
-  font-size:18px;
+    font-size: 18px;
     margin-top: 5px;
-
 }
 
 .c-kpi-red {
-    background-color:#de6464;
-}
-.c-kpi-green {
-    background-color:mediumaquamarine;
-}
-.c-kpi-yellow {
-    background-color:#f4c460;
-}
-.c-kpi-unknown {
-     background-color:rgba(0, 0, 0, 0.15);
+    background-color: #de6464;
 }
 
+.c-kpi-green {
+    background-color: mediumaquamarine;
+}
+
+.c-kpi-yellow {
+    background-color: #f4c460;
+}
+
+.c-kpi-unknown {
+    background-color: rgba(0, 0, 0, 0.15);
+}
 
 .c-kpi-list {
-
-   margin: 0;
-   width: 100%
-
+    margin: 0;
+    width: 100%;
 }
-.c-kpi-list li{
 
-  text-align: center;
-
-}
+    .c-kpi-list li {
+        text-align: center;
+    }
 
 /*Project Information end*/
+
+/*pie */
+.c-pie-container {
+margin: 0 auto;
+width: 100%;
+ text-align: center;
+}
+.chart {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+  height: 200px;
+  text-align: center;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 5%;
+}
+.percent {
+display: block;
+padding-top: 50px;
+z-index: 2;
+font-size: 42px;
+font-weight: bold;
+margin: 0 auto;
+
+
+}
+.percent:after {
+  content: '%';
+  margin-left: 0.1em;
+  font-size: 16px;
+   color: #808080;
+}
+.c-pie-container .row {
+     border-top: 1px solid #edecec;
+     width: 80%;
+     margin: 0 auto;
+     margin-top: 5px;
+}
+
+.c-pie-container .row .col:nth-child(1) {
+     border-right: 1px solid #edecec;
+     text-align: right;
+     padding-right: 5px;
+     padding-top: 1%;
+     
+}
+
+.c-pie-container .row .col:nth-child(2) {
+     
+     text-align: left;
+     padding-left: 5px;
+       padding-top: 1%;
+}
+
+.c-pie-container .title {
+   
+     font-size: 2.8vw;
+    display: block;
+    color: #808080;
+    padding-top: 3%;
+}
+
+.c-pie-container .val {
+
+    display: block;
+    font-weight: bold;
+    color:#e04646;
+    padding-top: 3%;
+
+}
+
+
+
+.c-pie-subtitle {
+display: block;
+margin: 0 auto;
+text-align: center;
+font-size: 12px;
+}
