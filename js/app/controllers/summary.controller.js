@@ -17,7 +17,7 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
 
     $scope.percentComplete = 75;
 
-    $scope.renderBarChart = function () {
+    $scope.renderBarChart = function (args) {
         $('#tasks-status-chart').highcharts({
             chart: {
                 type: 'column',
@@ -95,7 +95,7 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
         });
     }
 
-    $scope.renderBarChart();
+    $scope.renderBarChart();
    
   
 })
