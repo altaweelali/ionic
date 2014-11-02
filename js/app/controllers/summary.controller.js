@@ -1,7 +1,6 @@
 ﻿/// <reference path="../../../lib/ionic/js/angular/angular.js" />
 var app = angular.module('app')
 app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope) {
-
     var width = $(document).width() * 0.70;
     $scope.pieOptions = {
         animate: {
@@ -16,4 +15,84 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
     };
 
     $scope.percentComplete = 75;
+
+    $scope.renderBarChart = function () {
+        $('#tasks-status-chart').highcharts({
+            chart: {
+                type: 'column',
+                zoomType: 'x',
+                height: 200
+            },
+            title: {
+                text: ''
+            },
+
+            credits: {
+                enabled: false
+            },
+            legend: {
+                enabled: false,
+                itemStyle: {
+                    color: '#000000',
+                    fontWeight: '100',
+                    "text-transform": 'uppercase',
+                }
+            },
+
+            tooltip: {
+                shared: true
+            },
+
+            yAxis: {
+                ceiling: 250,
+                gridLineDashStyle: 'dash',
+                gridLineColor: '#fff',
+                title: {
+                    text: ''
+                },
+                labels: {
+                    enabled: false,
+                    style: {
+                        color: '#F78181'
+                    }
+                }
+            },
+            xAxis: {
+                categories: [
+                 'Complete',
+                 'In-progress',
+                 'Remaining'
+
+                ]
+            },
+            plotOptions: {
+                series: {
+                    
+                    shadow: false,
+                    marker: {
+                        enabled: false
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        color: '#A34775',
+                        style: {
+                            fontWeight: 'bold'
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'column',
+                name: 'Tasks Status',
+                data: [
+                    { name: 'Complete', y: 100, color: '#4D94B8' },
+                    { name: 'In-progress', y: 50, color: '#70B894' },
+                    { name: 'Remaining', y: 200, color: '#DB4D4D' },
+
+                ]
+            }]
+        });
+    }
+
+    $scope.renderBarChart()
 })
