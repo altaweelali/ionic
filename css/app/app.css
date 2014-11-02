@@ -6,6 +6,7 @@ margin-top: 5px;
 
 body {
     -webkit-tap-highlight-color:rgba(0,0,0,0);
+    font-family: 'Roboto', sans-serif !important;
 }
 
 
@@ -170,19 +171,24 @@ body {
 
 .loading-0 {
     -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
     -webkit-animation-delay: .1s;
+    animation-delay: .1s;
     background: #009DC6;
 }
 
 .loading-1 {
     -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
     -webkit-animation-delay: .3s;
     background: #e8b440;
 }
 
 .loading-2 {
     -webkit-animation: bounce 1s infinite ease;
+    animation: bounce 1s infinite ease;
     -webkit-animation-delay: .5s;
+    animation-delay: .5s;
     background: #b62327;
 }
 
@@ -202,12 +208,16 @@ body {
 .c-ion-item .item-content {
     padding: 10px 10px 10px 10px !important;
 }
+.c-ion-item  {
+    padding: 5px 5px 0 5px !important;
+   
+}
 
 .c-project-item-conttainer {
 }
 
 .c-initial-col {
-    margin-top: 20px;
+   
     padding: 0;
 }
 
@@ -227,9 +237,11 @@ body {
 
     .c-info-row .col-1 {
         margin-right: 5px;
+         padding: 0;
     }
 
     .c-info-row .col-2 {
+         padding: 0;
     }
 
 .c-info-col {

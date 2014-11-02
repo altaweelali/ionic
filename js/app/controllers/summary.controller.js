@@ -5,8 +5,11 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
     var height = $(window).height();
     $scope.pieOptions = {
         animate: {
-            duration: 1000,
+            duration: 1500,
             enabled: true
+        },
+        onStep: function(from, to, percent) {
+            this.el.children[0].innerHTML = Math.round(percent);
         },
         size: width,
         barColor: '#2b6b90',
