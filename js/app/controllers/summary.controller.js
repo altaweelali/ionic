@@ -1,7 +1,8 @@
 ﻿/// <reference path="../../../lib/ionic/js/angular/angular.js" />
 var app = angular.module('app')
-app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope) {
+app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope, $ionicScrollDelegate) {
     var width = $(document).width() * 0.70;
+    var height = $(window).height();
     $scope.pieOptions = {
         animate: {
             duration: 1000,
@@ -20,7 +21,7 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
         $('#tasks-status-chart').highcharts({
             chart: {
                 type: 'column',
-                zoomType: 'x',
+                
                 height: 200
             },
             title: {
@@ -94,5 +95,7 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
         });
     }
 
-    $scope.renderBarChart()
+    $scope.renderBarChart();
+   
+  
 })

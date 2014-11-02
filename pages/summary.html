@@ -5,9 +5,9 @@
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-ios7-gear-outline"></button>
     </ion-nav-buttons>
-    <ion-content class="has-header">
+    <ion-content class="has-header" on-swipe-up="renderBarChart()">
 
-       
+
 
         <div class="c-dash-container">
             <!-- Project name and status date -->
@@ -113,26 +113,26 @@
             <div class="row c-row">
 
 
-                <div class="c-pie-container">
+                <div class="c-pie-container" id="scroller1">
                     <div class="c-title-1 c-pie-subtitle">Milestones Status</div>
                     <ul class="c-info-list">
                         <li class="c-info-item">
-                            
+
                             <div class="c-title-5 c-title-center c-text-nowrap">50</div>
                             <div class="c-title-1 c-title-center">Completed</div>
                         </li>
                         <li class="c-info-item">
-                            
+
                             <div class="c-title-5 c-title-center c-text-nowrap">123</div>
                             <div class="c-title-1 c-title-center">Remaining</div>
                         </li>
                         <li class="c-info-item">
-                            
+
                             <div class="c-title-5 c-title-center c-text-nowrap">2544</div>
                             <div class="c-title-1 c-title-center">Due Soon</div>
                         </li>
                         <li class="c-info-item ">
-                            
+
                             <div class="c-title-5 c-title-center c-text-nowrap">123</div>
                             <div class="c-title-1 c-title-center">Overdue</div>
                         </li>
@@ -142,7 +142,7 @@
                     <div class="c-bar-chart" id="tasks-status-chart"></div>
 
                 </div>
-             
+
             </div>
         </div>
 

@@ -4,6 +4,10 @@
 margin-top: 5px;
 }
 
+body {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
 /*Log in Page - start*/
 
 .c-login-view {
