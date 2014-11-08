@@ -2,6 +2,7 @@
 app.controller('loginCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope) {
 
 
+
     $rootScope.isLoggedIn = false;
     $scope.error = false;
     $scope.errorMessage = '';

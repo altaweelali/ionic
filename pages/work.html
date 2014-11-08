@@ -1,12 +1,79 @@
-﻿<ion-view title="Work">
+﻿<ion-view title="Work" hide-back-button="true">
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-ios7-gear-outline"></button>
     </ion-nav-buttons>
-    <ion-content class="has-header">
-        <h1>{{ProjectUID}}</h1>
-      
+    <ion-content class="has-header" >
+
+
+
+        <div class="c-dash-container">
+            <!-- Project name and status date -->
+            <div class="row c-row">
+                <div class="col col-80">
+                    <div class="c-title-1 ">Project Name</div>
+                    <div class="c-title-3 c-text-nowrap">Project Server Project Name Project Server Project Name</div>
+                </div>
+                <div class="col col-20">
+                    <div class="c-title-1 c-title-center">Status date</div>
+                    <div class="c-title-2 c-title-center">01/01/14</div>
+                </div>
+
+
+            </div>
+            <div class="c-devider"></div>
+            <div class="row c-row">
+                <div class="col">
+                    <div class="c-title-1 c-pie-subtitle">Overall Work Status</div>
+                    <ul class="c-info-list">
+                        <li class="c-info-item">
+
+                            <div class="c-title-5 c-title-center c-text-nowrap">50</div>
+                            <div class="c-title-1 c-title-center">Planned</div>
+                        </li>
+                        <li class="c-info-item">
+
+                            <div class="c-title-5 c-title-center c-text-nowrap">123</div>
+                            <div class="c-title-1 c-title-center">Actual</div>
+                        </li>
+                        <li class="c-info-item">
+
+                            <div class="c-title-5 c-title-center c-text-nowrap">2544</div>
+                            <div class="c-title-1 c-title-center">Remaining</div>
+                        </li>
+                        <li class="c-info-item ">
+
+                            <div class="c-title-5 c-title-center c-text-nowrap">123</div>
+                            <div class="c-title-1 c-title-center">Completed</div>
+                        </li>
+                    </ul>
+                    <div class="c-devider"></div>
+                </div>
+            </div>
+            
+            <div class="row c-row">
+                <div class="col">
+                    <div class="c-title-1 c-pie-subtitle c-top-5">Work Status this week</div>
+                    <div class="c-bar-chart" id="tasks-status-chart"></div>
+                </div>
+            </div>
+            <div class="c-devider"></div>
+
+            <div class="row c-row">
+                <div class="col">
+                    <div class="c-title-1 c-pie-subtitle c-top-5">Work Burn up (S-Curve)</div>
+                    <div id="work-line-chart"></div>
+                </div>
+ 
+            </div>
+            
+
+         
+        </div>
+
+
+
     </ion-content>
 </ion-view>

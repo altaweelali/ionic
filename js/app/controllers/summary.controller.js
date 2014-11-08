@@ -2,7 +2,8 @@
 var app = angular.module('app')
 app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, auth, $state, datacontext, $rootScope, $ionicScrollDelegate) {
     var width = $(document).width() * 0.70;
-    var height = $(window).height();
+    var height = $(window).height();
+
     $scope.pieOptions = {
         animate: {
             duration: 1500,
@@ -48,7 +49,7 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
             },
 
             yAxis: {
-                ceiling: 250,
+              
                 gridLineDashStyle: 'dash',
                 gridLineColor: '#fff',
                 title: {
@@ -98,7 +99,9 @@ app.controller('summaryCtrl', function ($scope, $ionicModal, $timeout, $http, au
         });
     }
 
-    $scope.renderBarChart();
+
+    $scope.renderBarChart();
+
    
   
 })
