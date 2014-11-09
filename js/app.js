@@ -8,7 +8,11 @@ angular.module('app', ['ionic', 'breeze.angular', 'easypiechart'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
+      // for form inputs)
+
+      $('#viewport').attr('content', 'user-scalable=no, initial-scale=0.7729, minimum-scale=0.7729, maximum-scale=0.7729, width=device-width');
+
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
