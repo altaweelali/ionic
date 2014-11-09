@@ -97,7 +97,7 @@ angular.module('app', ['ionic', 'breeze.angular', 'easypiechart'])
         views: {
             'menuContent': {
                 templateUrl: "pages/cost.html",
-                controller: 'AppCtrl'
+                controller: 'costCtrl'
                
             }
         }
